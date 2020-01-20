@@ -1,1 +1,111 @@
-This is the SS page
+<html>
+<body>
+<h1>Interspeech 2020 Special Session: New Trends in self-supervised speech processing (S3P)</h1>
+
+<h2>Session Overview</h2>
+Over the past decade, supervised deep learning models led to great strides in performance for speech processing technologies and applications. However, unlike humans who are capable of self-learning through experiences and interactions, current real-world speech applications are heavily reliant on large volumes of human annotations. For the next generation of speech processing systems to exhibit similar levels of cognitive intelligence as humans, they should be designed to exploit unlabeled, partially labeled, contextual and distant supervision data from multiple concurrent modalities, e.g., text and video, and learning signals from corrective user follow-ups in conversational applications. The main motivation for self-supervised learning is rooted in our need to improve ASR systems when there is a limited amount of labeled data.<br>
+<br>
+Self-supervised learning methods [LeCun 2016] construct proxy predictive tasks to train models for downstream scenarios by exploiting large amounts of unlabeled audio data, unpaired text and audio data in the same domain, or speech data with distant unrelated labels, e.g. A text summary or slides of an audio lecture. Through these invented proxy tasks, models learn high-level representations that generalize well across different languages, domains, and deployment scenarios with very few in-domain labeled examples. Self-supervised learning methods achieved major successes in Natural Language Processing (NLP) [Peters 2018, Devlin 2018, Radford 2019, Raffel 2019, Lewis 2019] and Computer Vision (CV) [Sun 2019, He 2019, Xie 2019, Misra 2019]. <br>
+<br>
+There is a recent surge in speech processing research work introducing predictive proxy tasks for model training, and achieving impressive results in downstream applications like ASR and speaker recognition. These self-supervised approaches include, but not limited to:
+<ul>
+	<li>Future prediction: Learning an autoregressive model that generates distant future audio features from historical ones [Oard 2018, Chung 2019, Schneider 2019].
+	<li>Mask prediction: Learning a model that predicts masked parts of the input audio signal [Liu 2019, Song 2019, Baevski 2019a, Baevski 2019b].
+	<li>Generating contextual data: Learning a model to predict semantically-related contextual information that accompany the speech signal, e.g. Using social media title and comments as input audio labels [Singh 2019, Pascual 2019].
+	<li>Chaining ASR and TTS: Using unpaired audio and text data to train an ASR system and a TTS system jointly, where one is generating training paired data for the other [Tjandra 2019, Hori 2019, Baskar 2019]. This family of self-supervised methods can be viewed as auto-encoders of speech signals through latent text representations. Effective use of external language models falls into this category to regularize the text representations.
+</ul>  
+<br>
+This line of research is different from the Zero-resource ASR direction [Jansen 2013, Burget 2016] because self-supervised approaches can use text-only data as well as audio-only data. Moreover, self-supervised ASR systems can start from an initially trained seed model using some labeled data, It does not have to be "zero".<br>
+<br>
+<br>
+<h2>Call for Papers:</h2>
+We welcome the submission that work on, but not limited to, the following research directions:
+<ul>  
+	<li>New self-supervised training approaches for speech processing.
+	<li>Studies that highlight similarities and differences of self-supervised learning approaches.
+	<li>Empirical studies focusing on understanding why do self-supervision methods work for speech, for example:
+	<ul>
+		<li>What does the model learn in self-supervised learning tasks? 
+		<li>Why unrelated self-supervised proxy tasks improve downstream speech applications performance?
+		<li>Are there some self-supervision proxy tasks that are suitable for some downstream applications but not others?
+	</ul>	
+	<li>What are the most effective ways to exploit self-supervised models in the downstream tasks?
+	<li>Can self-supervised models generalize across domains or languages? Are there data diversity conditions to achieve that? 
+	<li>How can self-supervision methods help spoken language understanding systems?
+</ul>  
+<br>  
+
+<h2>References</h2>
+[Baevski 2019a] Baevski, A., Schneider, S. and Auli, M., vq-wav2vec: Self-Supervised Learning of Discrete Speech Representations. arXiv 2019.<br>
+
+[Baevski 2019b] Baevski, A., Auli, M., Mohamed, A., Effectiveness of self-supervised pre-training for speech recognition. arXiv 2019.<br>
+
+[Baskar 2019] Baskar, M.K., Watanabe, S., Astudillo, R., Hori, T., Burget, L. and Černocký, J., Self-supervised Sequence-to-sequence ASR using Unpaired Speech and Text. arXiv 2019.<br>
+
+[Burget 2016] Burget, L., Khudanpur, S., Dehak, N., Trmal, J., Haeb-Umbach, R., Neubig, G., Watanabe, S., Mochihashi, D., Shinozaki, T., Sun, M. and Liu, C., Building Speech Recognition System from Untranscribed Data Report from JHU workshop 2016.<br>
+
+[Chung 2019] Chung, Y.A. and Glass, J., Generative Pre-Training for Speech with Autoregressive Predictive Coding. arXiv 2019.<br>
+
+[Devlin 2018] Devlin, J., Chang, M.W., Lee, K. and Toutanova, K., Bert: Pre-training of deep bidirectional transformers for language understanding. arXiv 2018.<br>
+
+[He 2019] He, K., Fan, H., Wu, Y., Xie, S. and Girshick, R., Momentum Contrast for Unsupervised Visual Representation Learning. arXiv 2019.<br>
+
+[Hori 2019] Hori, T., Astudillo, R., Hayashi, T., Zhang, Y., Watanabe, S. and Le Roux, J., Cycle-consistency training for end-to-end speech recognition. In ICASSP 2019<br>
+
+[Jansen 2013] Jansen, A., Dupoux, E., Goldwater, S., Johnson, M., Khudanpur, S., Church, K., Feldman, N., Hermansky, H., Metze, F., Rose, R. and Seltzer, M., A summary of the 2012 JHU CLSP workshop on zero resource speech technologies and models of early language acquisition. In ICASSP 2013<br>
+
+[LeCun 2016] LeCun, Yann, “Predictive Learning” Invited talk, NeurIPS 2016.<br>
+
+[Lewis 2019] Lewis, M., Liu, Y., Goyal, N., Ghazvininejad, M., Mohamed, A., Levy, O., Stoyanov, V. and Zettlemoyer, L., Bart: Denoising sequence-to-sequence pre-training for natural language generation, translation, and comprehension. arXiv 2019.<br>
+
+[Liu 2019] Liu, A.T., Yang, S.W., Chi, P.H., Hsu, P.C. and Lee, H.Y., Mockingjay: Unsupervised Speech Representation Learning with Deep Bidirectional Transformer Encoders. arXiv 2019.<br>
+
+[Misra 2019] Misra, I. and van der Maaten, L., Self-Supervised Learning of Pretext-Invariant Representations. arXiv 2019.<br>
+
+[Oard 2018] Oord, A.V.D., Li, Y. and Vinyals, O., Representation learning with contrastive predictive coding. arXiv 2018<br>
+
+[Pascual 2019] Pascual, S., Ravanelli, M., Serrà, J., Bonafonte, A. and Bengio, Y., Learning problem-agnostic speech representations from multiple self-supervised tasks. arXiv 2019.<br>
+
+[Peters 2018] Peters, M.E., Neumann, M., Iyyer, M., Gardner, M., Clark, C., Lee, K. and Zettlemoyer, L., Deep contextualized word representations. arXiv 2018.<br>
+
+[Radford 2019] Radford, A., Wu, J., Child, R., Luan, D., Amodei, D. and Sutskever, I., Language models are unsupervised multitask learners. Technical Report, OpenAI, 2019.<br>
+
+[Raffel 2019] Raffel, C., Shazeer, N., Roberts, A., Lee, K., Narang, S., Matena, M., Zhou, Y., Li, W. and Liu, P.J., Exploring the limits of transfer learning with a unified text-to-text transformer. arXiv 2019.<br>
+
+[Tjandra 2019] Tjandra, A., Sakti, S. and Nakamura, S., End-to-end feedback loss in speech chain framework via straight-through estimator. In ICASSP 2019.<br>
+
+[Schneider 2019] Schneider, S., Baevski, A., Collobert, R. and Auli, M., wav2vec: Unsupervised Pre-training for Speech Recognition. arXiv 2019.<br>
+
+[Singh 2019] Singh, K., Okhonko, D., Liu, J., Wang, Y., Zhang, F., Girshick, R., Edunov, S., Peng, F., Saraf, Y., Zweig, G. and Mohamed, A., Training ASR models by Generation of Contextual Information. arXiv 2019.<br>
+
+[Song 2019] Song, X., Wang, G., Wu, Z., Huang, Y., Su, D., Yu, D. and Meng, H., Speech-XLNet: Unsupervised Acoustic Model Pretraining For Self-Attention Networks. arXiv 2019.<br>
+
+[Sun 2019] Sun, C., Myers, A., Vondrick, C., Murphy, K. and Schmid, C., Videobert: A joint model for video and language representation learning. arXiv 2019.<br>
+
+[Xie 2019] Xie, Q., Hovy, E., Luong, M.T. and Le, Q.V., Self-training with Noisy Student improves ImageNet classification. arXiv 2019.<br>
+
+
+<h2>Session format:</h2>
+A panel discussion followed by a poster session.<br>
+<br>
+
+<h2>Organizing committee: (ordered alphabetically)</h2>
+<ul>
+  <li><p><a href="https://research.fb.com/people/mohamed-abdelrahman/">Abdelrahman Mohamed (Facebook)</a></p></li>
+  <li><p><a href="https://speech.ee.ntu.edu.tw/~tlkagk/">Hung-yi Lee (NTU)</a></p></li>
+  <li><p><a href="https://sites.google.com/view/shinjiwatanabe">Shinji Watanabe (JHU)</a></p></li>
+  <li><p><a href="https://ai.google/research/people/TaraSainath/">Tara Sainath (Google)</a></p></li>
+</ul>  
+
+
+<h2>Technical advisory committee: (ordered alphabetically)</h2>
+<ul>
+<li>Bhuvana Ramabhadran (Google)</li>
+<li>Dong Yu (Tencent)</li>
+<li>Jim Glass (MIT) </li>
+<li>Karen Livescu (TTIC)</li>
+<li>Nikko Strom (Amazon)</li>
+</ul>
+
+</body>
+</html>
